@@ -17,7 +17,6 @@ const EmployeeManagementsPage = () => {
   const queryClient = useQueryClient()
 
   const { data, error, isLoading } = useQuery<ReadEmployee, CustomError>({
-    staleTime: 20_000,
     queryKey: ['employees'],
     queryFn: ({ signal }) => readEmployee(signal),
   })

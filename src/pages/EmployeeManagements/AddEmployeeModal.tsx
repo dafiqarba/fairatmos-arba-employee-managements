@@ -51,7 +51,7 @@ const AddEmployeeModal = (props: TypeAddEmployeeModalProps) => {
     formState: { errors },
   } = useForm({
     resolver: zodResolver(employeeSchema),
-    defaultValues: { name: '', age: 0, department: '', gender: 'Yeah', hobby: [] },
+    defaultValues: { name: '', age: 0, department: '', gender: 'male', hobby: [] },
   })
 
   const { mutate, isPending } = useMutation({
