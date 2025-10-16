@@ -55,7 +55,11 @@ const Pagination = (props: PaginationProps) => {
           disabled={page <= 1}
           aria-label="Previous page"
           onClick={() => onPageChange(clamp(page - 1))}
-          className="rounded px-2 py-1 text-sm text-slate-500 border border-gray-400 disabled:opacity-50 cursor-pointer hover:bg-gray-300"
+          className={cn(
+            'rounded px-2 py-1 text-sm text-slate-500 border border-gray-400',
+            'disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-transparent',
+            'enabled:cursor-pointer enabled:hover:bg-gray-300'
+          )}
         >
           Previous
         </button>
@@ -100,7 +104,11 @@ const Pagination = (props: PaginationProps) => {
           aria-label="Next page"
           disabled={page >= pageCount}
           onClick={() => onPageChange(clamp(page + 1))}
-          className="rounded px-2 py-1 text-sm text-slate-500 border border-gray-400 disabled:opacity-50 cursor-pointer hover:bg-gray-300"
+          className={cn(
+            'rounded px-2 py-1 text-sm text-slate-500 border border-gray-400',
+            'disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-transparent',
+            'enabled:cursor-pointer enabled:hover:bg-gray-300'
+          )}
         >
           Next
         </button>
