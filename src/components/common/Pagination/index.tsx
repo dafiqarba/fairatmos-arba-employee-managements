@@ -7,6 +7,8 @@ type PaginationProps = {
   onPageChange: (p: number) => void
 }
 
+type PageToken = number | '…'
+
 const Pagination = (props: PaginationProps) => {
   const { page, pageSize, total, onPageChange } = props
 
@@ -17,30 +19,30 @@ const Pagination = (props: PaginationProps) => {
   const buildPages = (
     page: number,
     pageCount: number,
-    around = 1, // pages to show around the current page
-    edgeCount = 2 // pages to always show at the start and end
-  ): Array<number | '…'> => {
-    const ELLIPSIS: '…' = '…'
-    const out: Array<number | '…'> = []
+    siblingRadius = 1, // pages to show around the current page
+    boundaryCount = 2 // pages to always show at the start and end
+  ): PageToken[] => {
+    const ELLIPSIS: PageToken = '…'
+    const pages: PageToken[] = []
 
-    const push = (n: number) => out.push(n)
+    const pushNumber = (n: number) => pages.push(n)
     const pushGap = () => {
-      if (out[out.length - 1] !== ELLIPSIS) out.push(ELLIPSIS)
+      if (pages[pages.length - 1] !== ELLIPSIS) pages.push(ELLIPSIS) // avoid consecutive ellipses
     }
 
     for (let i = 1; i <= pageCount; i++) {
-      const inLeadingEdge = i <= edgeCount
-      const inTrailingEdge = i > pageCount - edgeCount
-      const nearCurrent = Math.abs(i - page) <= around
+      const inLeadingBoundary = i <= boundaryCount
+      const inTrailingBoundary = i > pageCount - boundaryCount
+      const nearCurrent = Math.abs(i - page) <= siblingRadius
 
-      if (inLeadingEdge || inTrailingEdge || nearCurrent) {
-        push(i)
+      if (inLeadingBoundary || inTrailingBoundary || nearCurrent) {
+        pushNumber(i)
       } else {
         pushGap()
       }
     }
 
-    return out
+    return pages
   }
 
   const pages = buildPages(page, pageCount)
