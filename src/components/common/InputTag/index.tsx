@@ -58,11 +58,11 @@ const InputTag = (props: InputTagProps) => {
           placeholder={placeholder}
           onBlur={() => commit(text)}
           onChange={(e) => setText(e.target.value)}
-          className="flex-1 bg-transparent outline-none font-normal disabled:bg-gray-500"
+          className="flex-1 bg-transparent outline-none font-normal disabled:bg-gray-500 text-base"
         />
       )}
       {value.length === maxTags && (
-        <p className="text-xs text-slate-500">Max {maxTags} reached.</p>
+        <p className="text-sm text-slate-500">Max {maxTags} reached.</p>
       )}
     </div>
   )

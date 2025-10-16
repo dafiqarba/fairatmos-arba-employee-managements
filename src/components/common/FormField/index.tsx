@@ -17,7 +17,7 @@ const FormField = (props: FormFieldProps) => {
   if (props.as === 'fieldset') {
     return (
       <fieldset className={className}>
-        <legend className="mb-1 block text-sm font-bold text-slate-800">
+        <legend className="mb-1 block text-base font-bold text-slate-800">
           {label}
           {required && <span className="inline text-red-600"> *</span>}
         </legend>
@@ -30,7 +30,7 @@ const FormField = (props: FormFieldProps) => {
   return (
     <div className={className}>
       <label
-        className="mb-1 block text-sm font-bold text-slate-800"
+        className="mb-1 block text-base font-bold text-slate-800"
         htmlFor={props.htmlFor}
       >
         {label}

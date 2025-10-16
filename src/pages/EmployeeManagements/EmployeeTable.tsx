@@ -49,7 +49,7 @@ const TableContent = (props: TableContentProps) => {
   if (!isLoading && !data.length)
     return (
       <tr className="odd:bg-gray-100 even:bg-gray-50">
-        <td colSpan={5} className="p-6 text-center text-slate-500">
+        <td colSpan={5} className="p-6 text-center text-slate-500 text-base">
           No employee data yet.
         </td>
       </tr>
@@ -60,7 +60,7 @@ const TableContent = (props: TableContentProps) => {
       {data.map((item, idx) => (
         <tr
           key={item.id ?? `${item.name}-${idx}`}
-          className="odd:bg-gray-100 even:bg-gray-50 border-b-2 border-gray-300 text-stone-700 font-semibold text-md"
+          className="odd:bg-gray-100 even:bg-gray-50 border-b-2 border-gray-300 text-stone-700 font-semibold text-base"
         >
           <td className="p-2 flex flex-row items-center h-full gap-2.5">
             <Avatar url={item.photo || ''} />
@@ -88,7 +88,7 @@ const EmployeeTable = (props: EmployeeTableProps) => {
   return (
     <>
       <div className="overflow-x-auto rounded-xl">
-        <table className="min-w-full text-left text-xs">
+        <table className="min-w-full text-left text-base font-bold">
           <thead className="bg-gray-200 text-slate-800 border-b-2 border-gray-300">
             <tr>
               <th className="p-3">Name</th>

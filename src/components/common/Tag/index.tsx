@@ -19,7 +19,7 @@ const Tag = (props: TagProps) => {
     <span
       className={cn(
         'inline-flex justify-center items-center gap-2 select-none',
-        size === 'sm' ? 'px-2 py-1 text-xs' : 'px-3 py-1.5 text-sm',
+        size === 'sm' ? 'px-2 py-1 text-sm' : 'px-3 py-1.5 text-base',
         kind === 'pill' && 'rounded-xl bg-sage-50 text-slate-400',
         kind === 'chip' && 'rounded-full bg-sage-500 text-white',
         className

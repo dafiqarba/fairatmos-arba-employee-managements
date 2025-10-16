@@ -57,14 +57,14 @@ const EmployeeManagementsPage = () => {
   }, [error])
 
   return (
-    <div className="mx-auto max-w-6xl space-y-6 p-2 sm:p-6 bg-gray-100 rounded-lg shadow-xs mt-8 mb-8">
+    <div className="mx-auto max-w-7xl space-y-6 p-2 sm:p-6 bg-gray-100 rounded-lg shadow-xs mt-8 mb-8">
       <div className="border-b-2 border-solid border-gray-300">
         <div className="flex flex-col gap-6 mb-4 sm:justify-between sm:items-center sm:flex-row">
           <div>
             <h1 className="text-2xl font-semibold text-stone-800">
               Employee Managements
             </h1>
-            <p className="text-slate-500 text-sm font-semibold">
+            <p className="text-slate-500 text-base font-semibold">
               Current roster of all active personnel and teams.
             </p>
           </div>
@@ -76,7 +76,7 @@ const EmployeeManagementsPage = () => {
         </div>
       </div>
 
-      <p className="text-slate-500 text-xs mb-4">
+      <p className="text-slate-500 text-sm mb-4">
         Displaying {start}-{end} of <b className="text-slate-800">{total}</b> Employees
       </p>
 
