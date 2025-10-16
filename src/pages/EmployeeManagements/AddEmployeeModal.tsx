@@ -24,7 +24,7 @@ export const DEPARTMENTS = [
 
 const employeeSchema = z.object({
   age: z
-    .number()
+    .number({ message: 'Age must be a number and cannot be empty.' })
     .min(20, { message: 'Age must be at least 20.' })
     .max(40, { message: 'Age must be no more than 40.' }),
   department: z.string().min(1, 'Department is required.'),
@@ -51,7 +51,7 @@ const AddEmployeeModal = (props: TypeAddEmployeeModalProps) => {
     formState: { errors },
   } = useForm({
     resolver: zodResolver(employeeSchema),
-    defaultValues: { name: '', age: 0, department: '', gender: 'male', hobby: [] },
+    defaultValues: { name: '', department: '', gender: 'male', hobby: [] },
   })
 
   const { mutate, isPending } = useMutation({
@@ -140,7 +140,12 @@ const AddEmployeeModal = (props: TypeAddEmployeeModalProps) => {
             </FormField>
 
             {/* Age */}
-            <FormField htmlFor="age" label="Age" error={errors.age?.message} required>
+            <FormField
+              htmlFor="age"
+              label="Age (Years)"
+              error={errors.age?.message}
+              required
+            >
               <input
                 id="age"
                 type="number"

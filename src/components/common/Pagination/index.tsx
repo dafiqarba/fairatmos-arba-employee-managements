@@ -48,7 +48,7 @@ const Pagination = (props: PaginationProps) => {
   const pages = buildPages(page, pageCount)
 
   return (
-    <div className="mt-4 w-full flex justify-end">
+    <div className="mt-4 w-full flex justify-center sm:justify-end">
       <nav className="flex items-center gap-1" aria-label="Pagination">
         <button
           type="button"
@@ -61,7 +61,7 @@ const Pagination = (props: PaginationProps) => {
             'enabled:cursor-pointer enabled:hover:bg-gray-300'
           )}
         >
-          Previous
+          <span className='text-xs'>{`<<`}</span> Previous
         </button>
         {pages.map((item, idx) => {
           const isGap = item === '…'
@@ -110,7 +110,7 @@ const Pagination = (props: PaginationProps) => {
             'enabled:cursor-pointer enabled:hover:bg-gray-300'
           )}
         >
-          Next
+          Next <span className='text-xs'>{`>>`}</span>
         </button>
       </nav>
     </div>

@@ -57,7 +57,7 @@ const EmployeeManagementsPage = () => {
   }, [error])
 
   return (
-    <div className="mx-auto max-w-6xl space-y-6 p-6 bg-gray-100 rounded-lg shadow-xs mt-8 mb-8">
+    <div className="mx-auto max-w-6xl space-y-6 p-2 sm:p-6 bg-gray-100 rounded-lg shadow-xs mt-8 mb-8">
       <div className="border-b-2 border-solid border-gray-300">
         <div className="flex flex-col gap-6 mb-4 sm:justify-between sm:items-center sm:flex-row">
           <div>
