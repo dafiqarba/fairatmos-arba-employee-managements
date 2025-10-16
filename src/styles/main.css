@@ -1,0 +1,44 @@
+@import 'tailwindcss';
+
+@theme {
+  /* Grays: backgrounds, borders, dividers */
+  --color-gray-50: #fafafa;
+  --color-gray-100: #ffffff;
+  --color-gray-200: #f0f0f0;
+  --color-gray-300: #e9e9e9;
+  --color-gray-400: #d0d7d7;
+  --color-gray-500: #cdd4d4;
+
+  /* Slate: blue-gray text + action/dark button */
+  --color-slate-800: #32465a;
+  --color-slate-700: #5a646e;
+  --color-slate-600: #666476;
+  --color-slate-500: #7f8890;
+  --color-slate-400: #9296a0;
+
+  /* Sage: green-gray chips/tags + light panels */
+  --color-sage-50: #e6ebeb;
+  --color-sage-100: #ebf0f0;
+  --color-sage-500: #7d8c8c;
+
+  /* Stone: warm brown text used in rows */
+  --color-stone-700: #56493c;
+
+  /* Sky: soft blue for Cancel button bg */
+  --color-sky-100: #d7e1eb;
+}
+
+html {
+  background-color: var(--color-gray-50);
+}
+
+body {
+  font-family: 'Arimo', sans-serif;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
