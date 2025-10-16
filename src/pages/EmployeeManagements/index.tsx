@@ -64,7 +64,7 @@ const EmployeeManagementsPage = () => {
             <h1 className="text-2xl font-semibold text-stone-800">
               Employee Managements
             </h1>
-            <p className="text-slate-500 text-base font-semibold">
+            <p className="text-slate-500 text-sm sm:text-base font-semibold">
               Current roster of all active personnel and teams.
             </p>
           </div>

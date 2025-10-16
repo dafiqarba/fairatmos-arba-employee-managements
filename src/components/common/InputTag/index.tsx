@@ -46,7 +46,7 @@ const InputTag = (props: InputTagProps) => {
   const handleRemove = (text: string) => onChange(value.filter((tag) => tag !== text))
 
   return (
-    <div className="flex flex-wrap items-center gap-2 rounded-lg border border-gray-400 bg-gray-100 px-3 py-2 outline-none focus:ring-1 focus:ring-slate-400 text-sm">
+    <div className="flex flex-wrap items-center gap-2 rounded-lg border border-gray-400 bg-gray-100 px-3 py-2 outline-none focus:ring-1 focus:ring-slate-400 text-sm sm:text-base">
       {value.map((t) => (
         <Tag key={t} onRemove={handleRemove} removable text={t} />
       ))}
@@ -58,11 +58,11 @@ const InputTag = (props: InputTagProps) => {
           placeholder={placeholder}
           onBlur={() => commit(text)}
           onChange={(e) => setText(e.target.value)}
-          className="flex-1 bg-transparent outline-none font-normal disabled:bg-gray-500 text-base"
+          className="flex-1 bg-transparent outline-none font-normal disabled:bg-gray-500 text-sm sm:text-base"
         />
       )}
       {value.length === maxTags && (
-        <p className="text-sm text-slate-500">Max {maxTags} reached.</p>
+        <p className="text-sm sm:text-base text-slate-500">Max {maxTags} reached.</p>
       )}
     </div>
   )

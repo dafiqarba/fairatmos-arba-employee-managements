@@ -113,7 +113,7 @@ const AddEmployeeModal = (props: TypeAddEmployeeModalProps) => {
                 id="name"
                 {...register('name')}
                 placeholder="Example: Kira Takada"
-                className="w-full rounded-lg border border-gray-500 px-3 py-2 outline-none focus:ring-1 focus:ring-slate-400 text-base bg-gray-100 font-normal"
+                className="w-full rounded-lg border border-gray-500 px-3 py-2 outline-none focus:ring-1 focus:ring-slate-400 text-sm sm:text-base bg-gray-100 font-normal"
               />
             </FormField>
 
@@ -126,14 +126,14 @@ const AddEmployeeModal = (props: TypeAddEmployeeModalProps) => {
             >
               <div className="flex flex-wrap gap-3">
                 {(['male', 'female'] as const).map((opt) => (
-                  <label key={opt} className="inline-flex items-center gap-2 rounded-lg text-base">
+                  <label key={opt} className="inline-flex items-center gap-2 rounded-lg text-sm sm:text-base">
                     <input
                       type="radio"
                       value={opt}
                       {...register('gender')}
                       className="h-4 w-4 accent-slate-700"
                     />
-                    <span className="text-base">{capitalizeFirstLetter(opt)}</span>
+                    <span className="text-sm sm:text-base">{capitalizeFirstLetter(opt)}</span>
                   </label>
                 ))}
               </div>
@@ -152,7 +152,7 @@ const AddEmployeeModal = (props: TypeAddEmployeeModalProps) => {
                 inputMode="numeric"
                 placeholder="Example: 32"
                 {...register('age', { valueAsNumber: true })}
-                className="w-full rounded-lg border border-gray-500 px-3 py-2 outline-none focus:ring-1 focus:ring-slate-400 text-base bg-gray-100 font-normal"
+                className="w-full rounded-lg border border-gray-500 px-3 py-2 outline-none focus:ring-1 focus:ring-slate-400 text-sm sm:text-base bg-gray-100 font-normal"
               />
             </FormField>
 
@@ -183,7 +183,7 @@ const AddEmployeeModal = (props: TypeAddEmployeeModalProps) => {
                 id="department"
                 defaultValue=""
                 {...register('department')}
-                className="w-full rounded-lg border border-gray-400 px-3 py-2 outline-none focus:ring-1 focus:ring-slate-400 bg-gray-100 font-normal text-base"
+                className="w-full rounded-lg border border-gray-400 px-3 py-2 outline-none focus:ring-1 focus:ring-slate-400 bg-gray-100 font-normal text-sm sm:text-base"
               >
                 <option value="" disabled>
                   -- Select Department --
