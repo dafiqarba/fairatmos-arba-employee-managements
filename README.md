@@ -33,7 +33,7 @@ npm run dev
 ## Project Structure
 
 ```
-src/              # router, providers, AppShell
+src/     
 ├── styles/       # global styles
 ├── pages/        # Employee Management Page
 ├── types/        # Global reusable type definition
